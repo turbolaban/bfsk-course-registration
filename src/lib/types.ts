@@ -5,4 +5,5 @@ export interface RegistrationData {
 	email: string;
 	phone: string;
 	isStudent?: boolean;
+	paymentType: 'deposit' | 'full';
 }
