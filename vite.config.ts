@@ -1,7 +1,8 @@
 import { defineConfig } from 'vitest/config';
 import { playwright } from '@vitest/browser-playwright';
 import tailwindcss from '@tailwindcss/vite';
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-cloudflare';
+
 import { sveltekit } from '@sveltejs/kit/vite';
 
 export default defineConfig({

@@ -2,13 +2,14 @@ import Stripe from 'stripe';
 import { json } from '@sveltejs/kit';
 import type { RequestEvent } from '@sveltejs/kit';
 import { env } from '$env/dynamic/private';
-import { db } from '$lib/server/db';
+import { getDb } from '$lib/server/db';
 import { registrations } from '$lib/server/db/schema';
 import type { RegistrationData } from '$lib/types';
 
 const stripe = new Stripe(env.STRIPE_SECRET_KEY);
 
-export async function POST({ request }: RequestEvent) {
+export async function POST({ request, platform }: RequestEvent) {
+	const db = getDb(platform);
 	try {
 		const data: RegistrationData = await request.json();
 

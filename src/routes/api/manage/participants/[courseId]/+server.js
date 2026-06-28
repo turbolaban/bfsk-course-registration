@@ -1,9 +1,10 @@
 import { json } from '@sveltejs/kit';
-import { db } from '$lib/server/db';
+import { getDb } from '$lib/server/db';
 import { registrations } from '$lib/server/db/schema';
 import { eq } from 'drizzle-orm';
 
-export async function GET({ params }) {
+export async function GET({ params, platform }) {
+	const db = getDb(platform);
 	const courseId = Number(params.courseId);
 
 	const participants = await db

@@ -1,0 +1,12 @@
+{
+	"name": "course-management-app",
+	"pages_build_output_dir": ".svelte-kit/cloudflare",
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "bfsk-course-registration",
+			"database_id": "ef4525e6-1a96-4a31-a822-9bbdb8e239da",
+			"migrations_dir": "./drizzle"
+		}
+	]
+}
